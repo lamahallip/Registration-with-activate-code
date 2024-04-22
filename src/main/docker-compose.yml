@@ -1,0 +1,19 @@
+version: '3.1'
+
+services:
+
+  db:
+    container_name: mysql-8.3.0
+    image: mysql:8.3.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: send_opinion
+    ports:
+      - "3306:3306"
+
+  adminer:
+    container_name: adminer-4.8.0-standalone
+    image: adminer:4.8.0-standalone
+    restart: always
+    ports:
+      - "7080:8080"
